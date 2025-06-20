@@ -103,7 +103,7 @@ A simple full-stack web application for managing tasks, built with Node.js, Expr
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shahmeer24/tasks-api-keploy
    cd tasks-api-keploy
    ```
 
