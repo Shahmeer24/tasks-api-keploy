@@ -1,0 +1,138 @@
+body {
+margin: 2rem 6rem;
+padding: 0;
+font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+background: #222;
+color: #fff;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+#taskInput{
+    width:20vw;
+}
+
+.edit-input{
+    display: block;
+    margin-top:10px;
+    width:20vw;
+}
+
+.main-heading {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+button, .btn {
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin:10px;
+  padding: 12px 18px;
+  width: 6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.12);
+}
+.btn-container{
+    display: flex;
+    margin-bottom: 14px;
+    gap:8px;
+}
+.btn-add-task{
+    width:8rem;
+}
+.btn-toggle{
+    background:#4f8cff;
+}
+
+.btn-delete{
+    background:red;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4f8cff;
+  outline: none;
+}
+
+.card {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+}
+
+.icon-bookmark{
+    color:#fff;
+    margin-right: 8px;
+    font-size: 1rem;
+    padding-right:8px;
+}
+
+.icon-check{
+    color:green;
+    margin-right: 8px;
+    font-size: 1.4rem;
+    padding-right:8px;
+}
+
+li{
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+@media (max-width: 600px) {
+    body{
+        margin:20px;
+    }
+  .container {
+    padding: 12px;
+    margin: 10px;
+    max-width: 70vw;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  #taskInput{
+    width:60vw;
+}
+
+.edit-input{
+    width:60vw;
+}
+  button, .btn {
+    padding: 14px 0;
+    font-size: 1.1rem;
+  }
+}
