@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styling.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-row">
+        <h1 class="main-heading">Task Manager</h1>
+        <button
+          class="toggle-mode-btn"
+          id="toggleModeBtn"
+          aria-label="Toggle light/dark mode"
+        >
+          <i class="fa fa-moon"></i>
+        </button>
+      </div>
+      <div class="input-row">
+        <input type="text" id="taskInput" placeholder="Enter task title" />
+        <button class="btn btn-add-task" onclick="addTask()">
+          <i class="fa fa-plus"></i> Add Task
+        </button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+    <footer class="footer">
+      Made with <span class="accent">&#10084;</span> by You
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+      // Theme toggle logic
+      const toggleBtn = document.getElementById("toggleModeBtn");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches;
+      function setTheme(mode) {
+        document.documentElement.setAttribute("data-theme", mode);
+        localStorage.setItem("theme", mode);
+        toggleBtn.innerHTML =
+          mode === "dark"
+            ? '<i class="fa fa-moon"></i>'
+            : '<i class="fa fa-sun"></i>';
+      }
+      toggleBtn.onclick = () => {
+        const current =
+          document.documentElement.getAttribute("data-theme") ||
+          (prefersDark ? "dark" : "light");
+        setTheme(current === "dark" ? "light" : "dark");
+      };
+      // On load
+      const saved = localStorage.getItem("theme");
+      setTheme(saved || (prefersDark ? "dark" : "light"));
+    </script>
+  </body>
+</html>
